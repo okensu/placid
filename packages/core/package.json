@@ -1,0 +1,20 @@
+{
+  "name": "placid-core",
+  "version": "0.0.0",
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "engines": {
+    "node": ">=24.14.1"
+  },
+  "scripts": {
+    "build": "tsdown"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "@openai/agents": "^0.8.3",
+    "zod": "^4.3.6"
+  }
+}

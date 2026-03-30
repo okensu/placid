@@ -1,0 +1,21 @@
+{
+  "name": "placid",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.14.1"
+  },
+  "workspaces": [
+    "packages/core",
+    "packages/telegram-bot"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present"
+  },
+  "devDependencies": {
+    "publint": "^0.3.18",
+    "tsdown": "^0.21.7",
+    "typescript": "^6.0.2"
+  }
+}
