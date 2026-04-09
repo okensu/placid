@@ -12,9 +12,5 @@
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
-  },
-  "peerDependencies": {
-    "@openai/agents": "^0.8.3",
-    "zod": "^4.3.6"
   }
 }
