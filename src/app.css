@@ -1,6 +1,50 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  /* TODO: Implement custom light and dark themes */
-  themes: forest --default;
+	/* TODO: Implement custom light theme */
+	themes: placid;
+}
+
+@plugin "daisyui/theme" {
+	name: "placid";
+	default: true; /* set as default */
+	prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
+	color-scheme: dark; /* color of browser-provided UI */
+
+	--color-base-100: #000000;
+	--color-base-200: #000000;
+	--color-base-300: #393a34;
+	--color-base-content: #dbd7ca;
+	--color-primary: #4d9375;
+	--color-primary-content: #000000;
+	--color-secondary: #d9739f;
+	--color-secondary-content: #000;
+	--color-accent: #5eaab5;
+	--color-accent-content: #000;
+	--color-neutral: #393a34;
+	--color-neutral-content: #dbd7ca;
+	--color-info: #6394bf;
+	--color-info-content: #000;
+	--color-success: #4d9375;
+	--color-success-content: #000000;
+	--color-warning: #e6cc77;
+	--color-warning-content: #000000;
+	--color-error: #cb7676;
+	--color-error-content: #000000;
+
+  /* border radius */
+	--radius-selector: 1rem;
+	--radius-field: 1rem;
+	--radius-box: 1rem;
+
+  /* base sizes */
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+
+  /* border size */
+	--border: 1px;
+
+  /* effects */
+	--depth: 0;
+	--noise: 1;
 }
