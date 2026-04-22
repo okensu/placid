@@ -1,17 +1,21 @@
 type WebSocketConnectionStatus =
-	'not_connected' |
+	'not_initiated' |
 	'connecting' |
 	'connected' |
-	'connection_lost' |
-	'connection_failed' |
-	'retrying';
+	'failed';
 
 type WebSocketState = {
 	websocket: WebSocket | null;
 	connectionStatus: WebSocketConnectionStatus;
+	wasConnectedBefore: boolean;
+	retryInSeconds: number;
+	numberOfRetries: number;
 };
 
 export const webSocketState = $state<WebSocketState>({
 	websocket: null,
-	connectionStatus: 'not_connected'
+	connectionStatus: 'not_initiated',
+	wasConnectedBefore: false,
+	retryInSeconds: 0,
+	numberOfRetries: 0
 });
