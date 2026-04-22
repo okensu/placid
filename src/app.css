@@ -1,2 +1,6 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
+@plugin "daisyui" {
+  /* TODO: Implement custom light and dark themes */
+  themes: forest --default;
+}
