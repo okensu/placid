@@ -3,12 +3,14 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
+	import devibeans from 'svelte-highlight/styles/devibeans';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	{@html devibeans}
 </svelte:head>
 
 <!-- {#if webSocketState.connectionStatus === 'connected'} -->
