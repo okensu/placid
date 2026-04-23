@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import devibeans from 'svelte-highlight/styles/devibeans';
+    import Events from '$lib/features/events/Events.svelte';
 
 	let { children } = $props();
 </script>
@@ -48,7 +49,11 @@
       <div class="px-4">Inbox</div>
     </nav>
     <div class="relative">
-			{@render children()}
+			<!-- {@render children()} -->
+
+      <div class:hidden={page.url.pathname !== '/events'}>
+        <Events />
+      </div>
     </div>
   </div>
 
