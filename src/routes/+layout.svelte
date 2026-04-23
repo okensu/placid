@@ -65,6 +65,9 @@
       <ul class="menu w-full grow">
         <li>
           <button onclick={() => goto('/')} class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-close:tooltip-primary {(page.url.pathname === '/') ? 'bg-primary text-base-100' : ''}" data-tip="Inbox">
+            {#if page.url.pathname !== '/' && false}
+              <div class="status status-primary absolute top-1/2 right-0 -translate-y-1/2 animate-bounce"></div>
+            {/if}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-1.5 inline-block size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z" />
             </svg>
@@ -74,6 +77,9 @@
 
         <li>
           <button onclick={() => goto('/events')} class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-close:tooltip-info {(page.url.pathname === '/events') ? 'bg-info text-base-100' : ''}" data-tip="Events">
+            {#if page.url.pathname !== '/events'}
+              <div class="status status-info absolute top-1/2 right-0 -translate-y-1/2 animate-bounce"></div>
+            {/if}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-1.5 inline-block size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
             </svg>
@@ -83,6 +89,9 @@
 
         <li>
           <button onclick={() => goto('/terminal')} class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-close:tooltip-secondary {(page.url.pathname === '/terminal') ? 'bg-secondary text-base-100' : ''}" data-tip="Terminal">
+            {#if page.url.pathname !== '/terminal' && false}
+              <div class="status status-secondary absolute top-1/2 right-0 -translate-y-1/2 animate-bounce"></div>
+            {/if}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-1.5 inline-block size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
             </svg>
