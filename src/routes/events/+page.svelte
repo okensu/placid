@@ -23,7 +23,10 @@
 			events.unshift(event);
 
 			setTimeout(() => {
-				event.isNew = false;
+				const storedEvent = events.find((item) => item.id === event.id);
+				if (storedEvent) {
+					storedEvent.isNew = false;
+				}
 			}, 3000);
 		}, 5000);
 
