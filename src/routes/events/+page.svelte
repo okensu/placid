@@ -1,5 +1,5 @@
 <script>
-	import { WindowVirtualizer } from 'virtua/svelte';
+	import { VList } from 'virtua/svelte';
 	import Event from '$lib/features/events/Event.svelte';
 
 	const events = $state(
@@ -35,9 +35,9 @@
 </script>
 
 <ul class="list">
-	<WindowVirtualizer data={events} getKey={(event, i) => event.id}>
+	<VList data={events} style="min-height: 100vh;" getKey={(event, i) => event.id}>
 		{#snippet children(event, index)}
 			<Event event={event} />
 		{/snippet}
-	</WindowVirtualizer>
+	</VList>
 </ul>
