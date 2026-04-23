@@ -95,7 +95,7 @@
 	  class="btn absolute top-2 left-1/2 -translate-x-1/2 {(newEvents.length > 0) ? 'bg-info text-base-100' : ''}"
 	>
 		{#if newEvents.length > 0}
-			Load {newEvents.length} new events
+			Show {newEvents.length} new {newEvents.length === 1 ? 'event' : 'events'}
 		{:else}
 			Auto-refresh
 		{/if}
