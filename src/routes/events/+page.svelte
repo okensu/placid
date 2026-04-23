@@ -2,15 +2,21 @@
 	import { WindowVirtualizer } from 'virtua/svelte';
 	import Event from '$lib/features/events/Event.svelte';
 
-	const sizes = [20, 40, 180, 77];
+	const events = $state(Array.from({ length: 100 }).map((_, i) => 100 - i ));
 
-	const data = Array.from({ length: 100 }).map((_, i) => sizes[i % 4] );
+	$effect(() => {
+		const interval = setInterval(() => {
+			events.unshift(events.length + 1);
+		}, 5000);
+
+		return () => clearInterval(interval);
+	});
 </script>
 
-<div class="list">
-	<WindowVirtualizer {data} getKey={(_, i) => i}>
+<ul class="list">
+	<WindowVirtualizer data={events} getKey={(item, i) => item}>
 		{#snippet children(item, index)}
 			<Event />
 		{/snippet}
 	</WindowVirtualizer>
-</div>
+</ul>

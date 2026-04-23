@@ -7,7 +7,21 @@
 	let isPayloadVisible = $state(false);
 </script>
 
-<li class="list-row border-b border-neutral rounded-none">
+<style>
+  @keyframes event-appear {
+		0% {background: color-mix(in oklab, #393a34 75%, #000 25%); height: 0; padding: 0 1rem;}
+		20% {background: color-mix(in oklab, #393a34 75%, #000 25%); height: auto; padding: 1rem;}
+		100% {background: #000;}
+	}
+
+	.event {
+		animation: event-appear 3s normal forwards ease-out;
+		interpolate-size: allow-keywords;
+		background: #000;
+	}
+</style>
+
+<li class="list-row border-b border-neutral rounded-none event">
 	<div><img class="size-10 rounded-box" src={genemetricsLogo} alt="Icon" /></div>
 	<div>
 		<div>GeneMetrics • ClickUp</div>
