@@ -4,7 +4,8 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import devibeans from 'svelte-highlight/styles/devibeans';
-    import Events from '$lib/features/events/Events.svelte';
+  import Events from '$lib/features/events/Events.svelte';
+  import { eventsState } from '$lib/features/events/state.svelte';
 
 	let { children } = $props();
 </script>
@@ -77,13 +78,26 @@
 
         <li>
           <button onclick={() => goto('/events')} class="is-drawer-close:tooltip is-drawer-close:tooltip-right is-drawer-close:tooltip-info {(page.url.pathname === '/events') ? 'bg-info text-base-100' : ''}" data-tip="Events">
-            {#if page.url.pathname !== '/events'}
+            <div class="indicator">
+              {#if page.url.pathname !== '/events' && eventsState.bufferedEvents.length > 0}
+                <span class="indicator-item badge badge-info badge-xs top-3 animate-bounce p-1">
+                  {#if eventsState.bufferedEvents.length < 100}
+                    <span class="countdown text-base-100">
+                      <span style="--value:{eventsState.bufferedEvents.length};" aria-live="polite" aria-label="{eventsState.bufferedEvents.length.toString()}">{eventsState.bufferedEvents.length}</span>
+                    </span>
+                  {:else}
+                    99+
+                  {/if}
+                </span>
+              {/if}
+            <!-- {#if page.url.pathname !== '/events' && eventsState.bufferedEvents.length > 0}
               <div class="status status-info absolute top-1/2 right-0 -translate-y-1/2 animate-bounce"></div>
-            {/if}
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-1.5 inline-block size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
-            </svg>
-            <span class="is-drawer-close:hidden">Events</span>
+            {/if} -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-1.5 inline-block size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
+              </svg>
+              <span class="is-drawer-close:hidden">Events</span>
+            </div>
           </button>
         </li>
 
