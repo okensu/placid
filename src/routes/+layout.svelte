@@ -10,6 +10,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+
+	<!-- TODO: Implement a custom theme for svelte-highlight if possible -->
 	{@html devibeans}
 </svelte:head>
 
