@@ -62,11 +62,11 @@ pre code.hljs {
     Inspired by vim's jellybeans theme (https://github.com/nanotech/jellybeans.vim)
 */
 .hljs {
-  color: #a39e9b;
+  color: #393a34;
 }
 .hljs-attr,
 .hljs-template-tag {
-  color: #8787d7;
+  color: #4d9375;
 }
 .hljs-comment,
 .hljs-doctag,
@@ -119,7 +119,7 @@ pre code.hljs {
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-  color: #558b2f;
+  color: #6394bf;
 }
 .hljs-selector-tag {
   color: #9966ff;
