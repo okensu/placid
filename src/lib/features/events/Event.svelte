@@ -33,6 +33,7 @@
 		<div class="text-xs opacity-80">taskCommentPosted #{event.id}</div>
 		<div class="collapse text-xs" class:collapse-open={isUnknownEvent || isPayloadVisible} class:collapse-close={!isUnknownEvent && !isPayloadVisible}>
 			<div class="collapse-content transition-all p-0" class:mt-4={isUnknownEvent || isPayloadVisible}>
+				<!-- TODO: Highlight has solid black background which creates a glitch when the event background is animated. Is there a way to make it transparent? -->
 				<Highlight language={json} code={'{"hello": "world"}'} />
 			</div>
 		</div>
