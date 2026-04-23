@@ -66,12 +66,12 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-1.5 inline-block size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
             </svg>
-            <span class="is-drawer-close:hidden">Queue</span>
+            <span class="is-drawer-close:hidden">Events</span>
           </button>
         </li>
 
         <li>
-          <button onclick={() => goto('/prompt')} class="is-drawer-close:tooltip is-drawer-close:tooltip-right {(page.url.pathname === '/prompt') ? 'bg-primary text-base-100' : ''}" data-tip="Prompt">
+          <button onclick={() => goto('/terminal')} class="is-drawer-close:tooltip is-drawer-close:tooltip-right {(page.url.pathname === '/terminal') ? 'bg-primary text-base-100' : ''}" data-tip="Terminal">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="my-1.5 inline-block size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
             </svg>
