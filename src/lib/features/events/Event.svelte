@@ -3,29 +3,34 @@
 	import { json } from 'svelte-highlight/languages';
 	import genemetricsLogo from '$lib/assets/genemetrics.png';
 
+	let { event } = $props();
+
 	let isUnknownEvent = false;
 	let isPayloadVisible = $state(false);
 </script>
 
 <style>
-  @keyframes event-appear {
+  @keyframes event-new-appear {
 		0% {background: color-mix(in oklab, #393a34 75%, #000 25%); height: 0; padding: 0 1rem;}
 		20% {background: color-mix(in oklab, #393a34 75%, #000 25%); height: auto; padding: 1rem;}
 		100% {background: #000;}
 	}
 
 	.event {
-		animation: event-appear 3s normal forwards ease-out;
 		interpolate-size: allow-keywords;
 		background: #000;
 	}
+
+	.event-new {
+		animation: event-new-appear 3s normal forwards ease-out;
+	}
 </style>
 
-<li class="list-row border-b border-neutral rounded-none event">
+<li class="list-row border-b border-neutral rounded-none event" class:event-new={event.isNew}>
 	<div><img class="size-10 rounded-box" src={genemetricsLogo} alt="Icon" /></div>
 	<div>
 		<div>GeneMetrics • ClickUp</div>
-		<div class="text-xs opacity-80">taskCommentPosted</div>
+		<div class="text-xs opacity-80">taskCommentPosted #{event.id}</div>
 		<div class="collapse text-xs" class:collapse-open={isUnknownEvent || isPayloadVisible} class:collapse-close={!isUnknownEvent && !isPayloadVisible}>
 			<div class="collapse-content transition-all p-0" class:mt-4={isUnknownEvent || isPayloadVisible}>
 				<Highlight language={json} code={'{"hello": "world"}'} />
