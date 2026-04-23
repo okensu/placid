@@ -3,7 +3,6 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
-	import devibeans from 'svelte-highlight/styles/devibeans';
   import Events from '$lib/features/events/Events.svelte';
   import { eventsState } from '$lib/features/events/state.svelte';
 
@@ -12,9 +11,6 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-
-	<!-- TODO: Implement a custom theme for svelte-highlight if possible -->
-	{@html devibeans}
 </svelte:head>
 
 <!-- {#if webSocketState.connectionStatus === 'connected'} -->
