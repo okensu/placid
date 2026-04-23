@@ -54,7 +54,7 @@
 			  {@render children()}
       {/if}
 
-      <div class:hidden={page.url.pathname !== '/events'}>
+      <div class:invisible={page.url.pathname !== '/events'}>
         <Events />
       </div>
     </div>
