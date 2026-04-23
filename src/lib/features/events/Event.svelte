@@ -13,7 +13,7 @@
 		<div>GeneMetrics • ClickUp</div>
 		<div class="text-xs opacity-80">taskCommentPosted</div>
 		<div class="collapse text-xs" class:collapse-open={isUnknownEvent || isPayloadVisible} class:collapse-close={!isUnknownEvent && !isPayloadVisible}>
-			<div class="collapse-content transition-all" class:mt-4={isUnknownEvent || isPayloadVisible}>
+			<div class="collapse-content transition-all p-0" class:mt-4={isUnknownEvent || isPayloadVisible}>
 				<Highlight language={json} code={'{"hello": "world"}'} />
 			</div>
 		</div>
