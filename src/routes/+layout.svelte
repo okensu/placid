@@ -49,7 +49,9 @@
       <div class="px-4">Inbox</div>
     </nav>
     <div class="relative">
-			<!-- {@render children()} -->
+      {#if page.url.pathname !== '/' && page.url.pathname !== '/events' && page.url.pathname !== '/terminal'}
+			  {@render children()}
+      {/if}
 
       <div class:hidden={page.url.pathname !== '/events'}>
         <Events />
