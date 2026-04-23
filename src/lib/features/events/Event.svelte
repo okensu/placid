@@ -7,7 +7,7 @@
 	let isPayloadVisible = $state(false);
 </script>
 
-<li class="list-row">
+<li class="list-row border-b border-neutral rounded-none">
 	<div><img class="size-10 rounded-box" src={genemetricsLogo} alt="Icon" /></div>
 	<div>
 		<div>GeneMetrics • ClickUp</div>

@@ -47,7 +47,7 @@
       </label>
       <div class="px-4">Inbox</div>
     </nav>
-    <div class="p-4">
+    <div>
 			{@render children()}
     </div>
   </div>
