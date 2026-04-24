@@ -50,7 +50,7 @@
 			  {@render children()}
       {/if}
 
-      <div class:hidden={page.url.pathname !== '/events'}>
+      <div class="{page.url.pathname !== '/events' ? 'opacity-0 pointer-events-none' : ''}">
         <Events />
       </div>
     </div>
